@@ -35,6 +35,7 @@ services:
     - --log-format=text
     - --log-to-file=false
     - --common-first-streamable-block=1
-    - --substreams-tier1-grpc-listen-addr=:9000
     - --reader-node-path=firesol
     - --reader-node-arguments=fetch rpc http://solana-validator:8899 1 --state-dir=./firehose-data/reader/data
+    - --substreams-tier1-block-type=sf.solana.type.v1.Block
+    - --substreams-tier1-grpc-listen-addr=:9000

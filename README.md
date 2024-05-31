@@ -24,7 +24,7 @@ You will need:
 1. Copy over the `firehose-core` sample config file `firehose-solana.yaml` in here:
 
    ```shell
-   wget -O firehose-solana.yaml https://github.com/streamingfast/substreams-solana-devenv/...
+   wget -O firehose-solana.yaml https://raw.githubusercontent.com/streamingfast/substreams-solana-devenv/master/firehose-solana.yaml
    ```
 
 1. Run the `solana-test-validator` in one terminal:
@@ -46,7 +46,7 @@ You will need:
    ```
 
    > [!NOTE]
-   > It takes ~150 blocks for Firehose to be be bootstrapped correctly, if you hit `Error: call sf.substreams.rpc.v2.Stream/Blocks: rpc error: code = Unavailable desc = connection error: desc = "error reading server preface: read tcp [::1]:54885->[::1]:9000: read: connection reset by peer"`, wait a bit an retry
+   > It takes ~40 blocks for Firehose to be be bootstrapped correctly, if you hit `Error: call sf.substreams.rpc.v2.Stream/Blocks: rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp [::1]:9000: connect: connection refused`, wait a bit an retry
 
 ### Docker Compose
 
@@ -76,7 +76,7 @@ substreams run -e localhost:9000 --plaintext https://github.com/streamingfast/su
 ```
 
 > [!NOTE]
-> It takes ~150 blocks for Firehose to be be bootstrapped correctly, if you hit `Error: call sf.substreams.rpc.v2.Stream/Blocks: rpc error: code = Unavailable desc = connection error: desc = "error reading server preface: read tcp [::1]:54885->[::1]:9000: read: connection reset by peer"`, wait a bit an retry
+> It takes ~40 blocks for Firehose to be be bootstrapped correctly, if you hit `Error: call sf.substreams.rpc.v2.Stream/Blocks: rpc error: code = Unavailable desc = connection error: desc = "error reading server preface: read tcp [::1]:54885->[::1]:9000: read: connection reset by peer"`, wait a bit an retry
 
 
 If you want to start from scratch again, do `docker compose down`
