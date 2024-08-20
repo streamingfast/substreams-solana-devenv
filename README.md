@@ -1,6 +1,6 @@
 ## Substreams on Solana Development Environment
 
-We are going to run the Firehose stack here to locally index a development Solana validator producing blocks. This will give you a full blown locally Firehose instance on which you will be able to run your Substreams for development purposes.
+We are going to run the Firehose stack here to locally index a development Solana validator producing blocks. This will give you a full blown local Firehose instance on which you will be able to run your Substreams for development purposes.
 
 > [!NOTE]
 > Everything can be done through `docker compose` so you don't need to install all the tools, follow [Docker Compose](#docker-compose) instructions to follow that path.
