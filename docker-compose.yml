@@ -19,7 +19,7 @@ services:
     - /data
 
   firehose:
-    image: ghcr.io/streamingfast/firehose-solana:v1.0.3
+    image: ghcr.io/streamingfast/firehose-solana:v1.0.4
     depends_on:
       solana-validator:
         condition: service_healthy
