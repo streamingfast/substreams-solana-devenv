@@ -7,6 +7,9 @@ start:
   - substreams-tier1
   - substreams-tier2
   flags:
+    log-format: text
+    log-to-file: false
+    advertise-chain-name: solana-localnet
     common-first-streamable-block: 1
     reader-node-path: "firesol"
     reader-node-arguments: |
@@ -15,6 +18,6 @@ start:
       http://localhost:8899
       1
       --state-dir
-      ./firehose-data/reader/data
+      {data-dir}/reader/data
     substreams-tier1-block-type: "sf.solana.type.v1.Block"
     substreams-tier1-grpc-listen-addr: :9000

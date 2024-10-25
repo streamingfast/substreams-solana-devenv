@@ -11,7 +11,6 @@ You will need:
 - [substreams](https://substreams.streamingfast.io/documentation/consume/installing-the-cli) CLI
 - [solana-test-validator](https://docs.solanalabs.com/cli/install) to run a local Solana chain
 
-
 ### Instructions
 
 1. Create a new folder that will hold the necessary files
@@ -50,20 +49,12 @@ You will need:
 
 ### Docker Compose
 
-A `solana-test-validator` image is required to run inside Docker. Sadly, it's not easy to find one that work in all cases. The recommended approach is to locally compile a Docker image of `solana-test-validator` and use it. We provide a sample image here that works.
-
-You first need to build a local version of `solana-test-validator` image with:
-
-```shell
-docker build -t solana-test-validator:v1.18.15 . -f Dockerfile.solana-test-validator
-```
-
-This step took ~10m on a Macbook M1 Pro, timings may differs.
-
 > [!NOTE]
-> Once the image is built, you don't need to repeat those steps anymore.
+> A `solana-test-validator` image is required to run inside Docker. Sadly, it's not easy to find one that work in all cases. The recommended approach is to locally compile a Docker image of `solana-test-validator` and use it. The Docker compose is configured to do that automatically for you, but the first run takes a bit of time, took ~10m on a Macbook M1 Pro to build the image `solana-test-validator` image.
+>
+> You can "prepare" this step by doing `docker build -t solana-test-validator:v1.18.26 . -f Dockerfile.solana-test-validator`. Once it's built, starting the `docker compose` is pretty quick.
 
-Once this is built and the image is available locally, you can simply launch:
+Simply run:
 
 ```shell
 docker compose up
@@ -77,6 +68,5 @@ substreams run -e localhost:9000 --plaintext https://github.com/streamingfast/su
 
 > [!NOTE]
 > It takes ~40 blocks before Firehose bootstraps correctly, if you hit `Error: call sf.substreams.rpc.v2.Stream/Blocks: rpc error: code = Unavailable desc = connection error: desc = "error reading server preface: read tcp [::1]:54885->[::1]:9000: read: connection reset by peer"`, wait a bit an retry
-
 
 If you want to start from scratch again, do `docker compose down`
